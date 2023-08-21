@@ -1,3 +1,11 @@
+:root {
+ --bg-color: #f3efec;
+  --text-color: #312a4e;
+  --accent-color: #ffab6b;
+  --main-font: Raleway;
+  --accent-font: STIX Two Text; 
+}
+
 *,
 *::before,
 *::after {
@@ -5,12 +13,6 @@
 }
 
 .page {
-  --bg-color: #f3efec;
-  --text-color: #312a4e;
-  --accent-color: #ffab6b;
-  --main-font: Raleway;
-  --accent-font: STIX Two Text;
-
   min-inline-size: 360px;
   margin: 0;
 
@@ -39,6 +41,11 @@ figure {
   --bg-color: #171717;
   --text-color: #b3b3b3;
   --accent-color: transparent;
+}
+
+a:focus,
+button:focus {
+ outline: none;
 }
 
 a:focus-visible,
@@ -116,16 +123,6 @@ button:focus-visible {
 }
 
 .theme_dark .header__theme-button_is-active::after {
-  content: "";
-
-  position: absolute;
-  top: 0.65em;
-  left: -2%;
-  z-index: -1;
-
-  inline-size: 105%;
-  block-size: 0.3em;
-
   background-image: url(../images/pattern.svg);
 }
 
@@ -170,20 +167,12 @@ button:focus-visible {
 .theme_dark
   .content__text-block_type_first-lettered
   .content__paragraph:first-child:first-letter {
-  display: inline-block;
-
-  padding: 0 4px;
-  margin-inline-start: 1px;
-
-  font-size: 30px;
-  font-weight: 700;
-
   border: 1px solid currentColor;
 }
 
 .content__figure {
   position: relative;
-  right: 5vw;
+  inset-inline-end: 5vw;
 
   inline-size: calc(100% + 10vw);
   margin: 6.3vw 0;
@@ -229,15 +218,16 @@ button:focus-visible {
 }
 
 .content__list-item:not(:last-child) {
-  padding-block-end: 10px;
+  margin-block-end: 10px;
 }
 
 .content__list-item::before {
   content: "";
 
   position: absolute;
-  top: 3px;
-  left: 15px;
+  inset-block-start: 50%;
+  margin-block-start: -7.5px;
+  inset-inline-start: 15px;
 
   inline-size: 15px;
   block-size: 15px;
@@ -249,19 +239,7 @@ button:focus-visible {
 }
 
 .theme_dark .content__list-item::before {
-  content: "";
-
-  position: absolute;
-  top: 3px;
-  left: 15px;
-
-  inline-size: 15px;
-  block-size: 15px;
-
   background-image: url(../images/marker-dark.svg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .content__card {
